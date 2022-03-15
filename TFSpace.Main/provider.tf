@@ -21,6 +21,7 @@ provider "aws" {
   secret_key = AWS_SECRET_ACCESS_KEY
 }
 
+
 provider "azurerm" {
   # Configuration options
   alias = "azure"
