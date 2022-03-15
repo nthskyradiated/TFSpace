@@ -42,6 +42,7 @@ resource "aws_instance" "TF-Ubuntu1" {
     device_index         = 0
     network_interface_id = aws_network_interface.UbuntuNI.id
   }
+  
   user_data = <<-EOF
  		#! /bin/bash
          sudo apt update -y
