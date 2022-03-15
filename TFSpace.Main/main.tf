@@ -32,7 +32,7 @@ resource "aws_subnet" "devsub" {
 resource "aws_network_interface" "UbuntuNI" {
   subnet_id       = aws_subnet.mainsub.id
   private_ips     = ["10.0.1.25"]
-  security_groups = [aws_security_group.allow_web.id]
+
 }
 resource "aws_instance" "TF-Ubuntu1" {
   ami               = "ami-04505e74c0741db8d"
