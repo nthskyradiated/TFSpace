@@ -2,7 +2,6 @@ terraform {
   
    cloud {
      organization = "nthskyIO"
-
      workspaces {
        tags = ["main"]
        }
