@@ -10,14 +10,20 @@ terraform {
 provider "aws" {
   # Configuration options
   region = "us-east-1"
-
 }
 
 
 provider "azurerm" {
   # Configuration options
   alias = "azure"
-  
+  }
 
+provider "kubernetes" {
+  # Configuration options
+  alias = "k8s"
 }
 
+provider "github" {
+  # Configuration options
+  alias = "ghub"
+}
