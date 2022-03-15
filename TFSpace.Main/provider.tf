@@ -1,4 +1,12 @@
 terraform {
+  
+   cloud {
+     organization = "nthskyIO"
+
+     workspaces {
+       tags = ["main"]
+       }
+   }
   required_providers {
     aws = {
       source = "hashicorp/aws"
