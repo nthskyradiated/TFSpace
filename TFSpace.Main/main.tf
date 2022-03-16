@@ -11,7 +11,6 @@ resource "aws_subnet" "mainsub" {
   cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
 
-
   tags = {
     Name = "Main-Sub"
   }
@@ -43,6 +42,7 @@ resource "aws_instance" "TF-Ubuntu1" {
     device_index         = 0
     network_interface_id = aws_network_interface.UbuntuNI.id
   }
+  
   user_data = <<-EOF
  		#! /bin/bash
          sudo apt update -y
