@@ -74,6 +74,7 @@ resource "aws_security_group" "TFSpace_allow_web" {
 resource "aws_network_interface" "TFSpace_UbuntuNI" {
   subnet_id   = aws_subnet.TFSpace_Prod_Sub.id
   private_ips = ["10.0.1.25"]
+  security_groups = [aws_security_group.TFSpace_allow_web.id]
 }
 
 resource "aws_internet_gateway" "TFSpace_GW" {
@@ -145,7 +146,7 @@ output "TFSpace_Private_IP" {
 output "TFSpace_MachineID" {
   value = aws_instance.TFSpace_Ubuntu1.id
 }
-output "Nthsky_State" {
+output "TFSpace_Ubuntu1_State" {
   value = aws_instance.TFSpace_Ubuntu1.instance_state
 }
 
