@@ -4,3 +4,4 @@
 -State is kept on Terraform Cloud.
 -Variables (especially credentials are being managed by TFC)
 
+Will Add future Resources via different providers in the future.
