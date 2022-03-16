@@ -105,6 +105,9 @@ resource "aws_route_table" "TFSpace_Route" {
     Name = "TFSpace_Route"
   }
 }
+
+
+#EIP somehow needs a "depends_on" tag to provision
 resource "aws_eip" "TFSpace_eip" {
 
   vpc                       = true
@@ -113,6 +116,9 @@ resource "aws_eip" "TFSpace_eip" {
   depends_on                = [aws_internet_gateway.TFSpace_GW, aws_instance.TFSpace_Ubuntu1]
 }
 
+
+#Network Interface is Attached
+#Script defined for Apache2 installation 
 resource "aws_instance" "TFSpace_Ubuntu1" {
   ami               = "ami-04505e74c0741db8d"
   instance_type     = "t2.micro"
@@ -135,6 +141,10 @@ resource "aws_instance" "TFSpace_Ubuntu1" {
   }
 }
 
+
+
+
+#Output blocks here
 output "TFSpace_Public_IP" {
   value = aws_eip.TFSpace_eip.public_ip
 }
