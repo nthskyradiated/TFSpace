@@ -32,13 +32,13 @@ resource "aws_subnet" "devsub" {
 resource "aws_network_interface" "UbuntuNI" {
   subnet_id       = aws_subnet.mainsub.id
   private_ips     = ["10.0.1.25"]
-  security_groups = [aws_security_group.allow_web.id]
+
 }
 resource "aws_instance" "TF-Ubuntu1" {
   ami               = "ami-04505e74c0741db8d"
   instance_type     = "t2.micro"
   availability_zone = "us-east-1a"
-  key_name          = "TFSpace.Key"
+  key_name          = "TFSpace.key"
   network_interface {
     device_index         = 0
     network_interface_id = aws_network_interface.UbuntuNI.id
