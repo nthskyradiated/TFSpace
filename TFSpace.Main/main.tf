@@ -83,7 +83,7 @@ resource "aws_internet_gateway" "TFSpace_GW" {
     Name = "TFSpace.Gateway"
   }
 }
-resource "aws_route_table_association" "TFSpace.RTA" {
+resource "aws_route_table_association" "TFSpace_RTA" {
   subnet_id      = aws_subnet.TFSpace_Prod_Sub.id
   route_table_id = aws_route_table.TFSpace_Route.id
 }
@@ -101,7 +101,7 @@ resource "aws_route_table" "TFSpace_Route" {
   }
 
   tags = {
-    Name = "DefaultRT"
+    Name = "TFSpace_Route"
   }
 }
 resource "aws_eip" "TFSpace_eip" {
